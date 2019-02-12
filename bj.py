@@ -1,19 +1,24 @@
 from random import shuffle
 
+
 class Card:
     """Blackjack card"""
     def __init__(self, rank, suit):
         self.rank = rank
         self.suit = suit
+
     def getRank(self):
         return self.rank
+
     def getSuit(self):
         return self.suit
+
     def value(self):
         if self.getRank() < 10:
             return self.rank
         else:
             return 10
+
     def __str__(self):
         ranks = [None, "Ace", "Two", "Three", "Four", "Five", "Six",
                  "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"]
@@ -28,25 +33,32 @@ class Card:
             suitStr = "Spades"
         return "{0} of {1}".format(rankStr, suitStr)
 
+
 class Deck:
     """Deck of 52 Balckjack cards."""
     def __init__(self):
         self.newDeck()
+
     def shuffle(self):
         shuffle(self.cards)
+
     def dealCard(self):
         return self.cards.pop(0)
+
     def cardsLeft(self):
         return self.cards
+
     def newDeck(self):
         self.cards = []
         for rank in range(1, 14):
             for suit in "cdhs":
                 self.cards.append(Card(rank, suit))
 
+
 class Player:
     def __init__(self):
         self.newHand()
+
     def getCard(self, card):
         self.cards.append(card)
         self.val = self.val + card.value()
@@ -54,17 +66,22 @@ class Player:
             self.hasAce = True
         if 7 <= self.val <= 11 and self.hasAce:
             self.val = self.val + 10
+
     def value(self):
         return self.val
+
     def latestCard(self):
         return self.cards[-1]
+
     def countCards(self):
         return len(self.cards)
+
     def newHand(self):
         self.cards = []
         self.val = 0
         self.hasAce = False
-    
+
+
 class Blackjack:
     def __init__(self, interface):
         self.deck = Deck()

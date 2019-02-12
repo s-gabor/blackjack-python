@@ -1,5 +1,6 @@
 from bj import Blackjack
 
+
 class TextInterface:
     def __init__(self):
         print("\n     #####   BLACKJACK   #####\n")
@@ -28,7 +29,8 @@ class TextInterface:
     def newDeckMessage(self):
         print("\n     *****   SHUFFLEED NEW DECK   *****     \n")
 
+
 if __name__ == "__main__":
     interface = TextInterface()
-    BJ = Blackjack(interface)
-    BJ.run()
+    blackjack = Blackjack(interface)
+    blackjack.run()
