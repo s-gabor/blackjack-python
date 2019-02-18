@@ -14,4 +14,12 @@ any platform where Tkinter is available.
 ## INSTALLATION: 
 Put this graphics.py file somewhere where Python can see it.
 
-![About](images/blackjack.png)
+
+## Video: 
+
+![About](images/blackjack.mp4)
+
+
+## Image: 
+
+![About](images/blackjack1.png)
